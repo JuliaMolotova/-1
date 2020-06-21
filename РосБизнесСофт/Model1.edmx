@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище РосБизнесСофтModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "РосБизнесСофт.dbo.AgentsSet" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="AgentsSet">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="FIO" />
+            <PropertyRef Name="Position" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FIO" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Position" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "РосБизнесСофт.dbo.ClientsSet" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="ClientsSet">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Busuness" />
+            <PropertyRef Name="FIO" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Busuness" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FIO" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "РосБизнесСофт.dbo.ConsultationSet" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="ConsultationSet">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="FIO" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Message" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FIO" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Хранилище РосБизнесСофтModelContainer">
+          <EntitySet Name="AgentsSet" EntityType="Self.AgentsSet" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AgentsSet].[Id] AS [Id], 
+    [AgentsSet].[FIO] AS [FIO], 
+    [AgentsSet].[Position] AS [Position], 
+    [AgentsSet].[Phone] AS [Phone], 
+    [AgentsSet].[Email] AS [Email]
+    FROM [dbo].[AgentsSet] AS [AgentsSet]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ClientsSet" EntityType="Self.ClientsSet" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ClientsSet].[Id] AS [Id], 
+    [ClientsSet].[Busuness] AS [Busuness], 
+    [ClientsSet].[FIO] AS [FIO], 
+    [ClientsSet].[Phone] AS [Phone], 
+    [ClientsSet].[Email] AS [Email]
+    FROM [dbo].[ClientsSet] AS [ClientsSet]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ConsultationSet" EntityType="Self.ConsultationSet" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ConsultationSet].[Id] AS [Id], 
+    [ConsultationSet].[FIO] AS [FIO], 
+    [ConsultationSet].[Phone] AS [Phone], 
+    [ConsultationSet].[Message] AS [Message]
+    FROM [dbo].[ConsultationSet] AS [ConsultationSet]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="РосБизнесСофтModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AgentsSet">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="FIO" />
+            <PropertyRef Name="Position" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FIO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClientsSet">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Busuness" />
+            <PropertyRef Name="FIO" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Busuness" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FIO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ConsultationSet">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="FIO" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Message" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FIO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="РосБизнесСофтEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AgentsSet" EntityType="Self.AgentsSet" />
+          <EntitySet Name="ClientsSet" EntityType="Self.ClientsSet" />
+          <EntitySet Name="ConsultationSet" EntityType="Self.ConsultationSet" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище РосБизнесСофтModelContainer" CdmEntityContainer="РосБизнесСофтEntities">
+          <EntitySetMapping Name="AgentsSet">
+            <EntityTypeMapping TypeName="РосБизнесСофтModel.AgentsSet">
+              <MappingFragment StoreEntitySet="AgentsSet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientsSet">
+            <EntityTypeMapping TypeName="РосБизнесСофтModel.ClientsSet">
+              <MappingFragment StoreEntitySet="ClientsSet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Busuness" ColumnName="Busuness" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConsultationSet">
+            <EntityTypeMapping TypeName="РосБизнесСофтModel.ConsultationSet">
+              <MappingFragment StoreEntitySet="ConsultationSet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
